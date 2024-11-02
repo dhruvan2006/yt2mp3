@@ -3,6 +3,8 @@ name: Build and Deploy to Cloud Run
 on:
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
@@ -30,6 +32,7 @@ jobs:
 
   deploy:
     needs: test
+    if: github.event_name == 'push'  # Only deploy on push events
     permissions:
       contents: 'read'
       id-token: 'write'
