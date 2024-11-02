@@ -10,12 +10,12 @@ Access the live website [here](https://yt2mp3-839554745582.europe-west4.run.app/
 
 1. Build the Docker image:
    ```bash
-   docker build -t flask-yt-downloader .
+   docker build -t yt2mp3 .
    ```
 
 2. Run the container:
     ```bash
-    docker run -p 5000:5000 flask-yt-downloader
+    docker run -p 5000:5000 yt2mp3
     ```
 
 3. Access the app at `http://127.0.0.1:5000/`.
